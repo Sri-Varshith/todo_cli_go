@@ -1,6 +1,10 @@
 package main
 
-import "time"
+import (
+	"errors"
+	"fmt"
+	"time"
+)
 
 type Todo struct {
 	Title       string
@@ -18,4 +22,13 @@ func (todos *Todos) add(title string) {
 		CreatedAt: time.Now(),
 	}
 	*todos = append(*todos, todo)
+}
+
+func (todos *Todos) validateIndex(index int) error {
+	if index < 0 || index >= len(*todos) {
+		err := errors.New("Invalid Index")
+		fmt.Println(err)
+		return err
+	}
+	return nil
 }
