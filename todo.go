@@ -81,7 +81,7 @@ func (todos *Todos) edit(index int, title string) error {
 func (todos *Todos) print() {
 	if len(*todos) == 0 {
 		empty := color.New(color.Faint, color.Italic)
-		empty.Println("✨ No tasks yet")
+		empty.Println("No tasks yet")
 		return
 	}
 
@@ -110,7 +110,7 @@ func (todos *Todos) print() {
 		}
 
 		tbl.AddRow(
-			strconv.Itoa(index+1),
+			strconv.Itoa(index),
 			t.Title,
 			status,
 			t.CreatedAt.Format("02 Jan 15:04"),
