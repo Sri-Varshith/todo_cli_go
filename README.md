@@ -22,16 +22,32 @@ git clone https://github.com/Sri-Varshith/todo_cli_go
 cd todo_cli_go
 ```
 
+Build the executable:
+
+```bash
+go build -o mytodo
+```
+
 Run the application:
 
 ```bash
-go run .
+./mytodo -list
 ```
 
-Or build an executable:
+---
+
+## Alternative Method
+
+Install globally using Go:
 
 ```bash
-go build
+go install
+```
+
+Then run from anywhere:
+
+```bash
+mytodo -list
 ```
 
 ---
@@ -41,31 +57,31 @@ go build
 ### Add a task
 
 ```bash
-go run . -add "Learn Go"
+./mytodo -add "Learn Go"
 ```
 
 ### List tasks
 
 ```bash
-go run . -list
+./mytodo -list
 ```
 
 ### Toggle task completion
 
 ```bash
-go run . -toggle 1
+./mytodo -toggle 1
 ```
 
 ### Edit a task
 
 ```bash
-go run . -edit 1:Build CLI project
+./mytodo -edit 1:Build CLI project
 ```
 
 ### Delete a task
 
 ```bash
-go run . -del 1
+./mytodo -del 1
 ```
 
 ---
@@ -93,7 +109,6 @@ go run . -del 1
 ```
 
 ---
-
 
 ## Future Improvements
 
